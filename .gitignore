@@ -1,24 +1,95 @@
-# Logs
-logs
-*.log
+# Arquivo .gitignore Otimizado para o Projeto Harpia AI Agents
+# Versão: Julho 2025
+
+# ==============================================================================
+# SEÇÃO 1: SEGREDOS E AMBIENTES (A MAIS CRÍTICA)
+# Nunca, em nenhuma hipótese, envie segredos, chaves ou credenciais para o Git.
+# ==============================================================================
+
+# Ignora TODOS os arquivos .env em QUALQUER pasta do projeto.
+# Isso cobre o .env na raiz, em 'agent-handler-service', e no 'rag_optimization_lab'.
+**/.env
+**/.env.yaml
+
+# Ignora pastas de ambientes virtuais do Python.
+venv/
+.venv/
+.pytest_cache
+
+# Ignora pastas de credenciais baixadas (ex: chaves JSON do Google).
+credentials/
+transcricoes/
+
+
+# ==============================================================================
+# SEÇÃO 2: DEPENDÊNCIAS E ARQUIVOS COMPILADOS
+# Ignora pastas e arquivos que são baixados ou gerados por gerenciadores
+# de pacotes e compiladores.
+# ==============================================================================
+
+# --- Node.js / TypeScript ---
+# Pasta de dependências do npm/yarn.
+agent-handler-service/node_modules/
+
+# Código JavaScript compilado a partir do TypeScript.
+agent-handler-service/dist/
+
+# --- Python ---
+# Cache do Python.
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# ==============================================================================
+# SEÇÃO 3: ARQUIVOS GERADOS E LOGS
+# Ignora arquivos criados durante a execução de scripts e logs.
+# ==============================================================================
+
+# Arquivos de embeddings gerados pelos nossos scripts Python.
+embeddings_database.json
+embeddings_database.jsonl
+
+# Binário do proxy do Google Cloud SQL baixado.
+cloud_sql_proxy
+cloud_sql_proxy.linux.amd64
+
+# Logs de debug do npm/yarn.
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Logs genéricos.
+*.log
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+
+# ==============================================================================
+# SEÇÃO 4: ARQUIVOS DE SISTEMA OPERACIONAL E EDITOR
+# Ignora arquivos de configuração específicos da máquina do desenvolvedor.
+# ==============================================================================
+
+# Metadados do macOS Finder.
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Configurações do editor de código (VSCode, JetBrains, etc.).
+.vscode/
+.idea/
+
+# ==============================================================================
+# SEÇÃO 5: ARQUIVOS TEMPORÁRIOS E BACKUPS
+# Ignora arquivos de texto e backups que não fazem parte do código-fonte.
+# ==============================================================================
+Plaintext.txt
+plaintext.txt
+novo_plaintext.txt
+*_backup_*
+# Arquivos de teste soberanos e temporários (V3 - A Regra Inquebrável)
+*_test.py
+*_teste.py
+*_test_*.py
+temp_*.py
+
+# Ignorar arquivos de ambiente do laboratório de RAG
+rag_lab_mateus/.env
+rag_lab_mateus
+data_factory/.env
