@@ -29,7 +29,7 @@ transcricoes/
 
 # --- Node.js / TypeScript ---
 # Pasta de dependências do npm/yarn.
-agent-handler-service/node_modules/
+node_modules/
 
 # Código JavaScript compilado a partir do TypeScript.
 agent-handler-service/dist/
